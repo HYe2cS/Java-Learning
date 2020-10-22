@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--父模块定义-->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.ZYJ</groupId>
+    <artifactId>Java-Learning</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <!--    项目名称和描述-->
+    <name>Java-Learning</name>
+    <description>A project help you to learn Java</description>
+    <url>https://hye2cs.github.io/LearningNotes</url>
+
+    <modules><!--        声明module-->
+        <module>v1ch02</module>
+        <module>v1ch03</module>
+        <module>v1ch04</module>
+        <module>v1ch05</module>
+        <module>v1ch06</module>
+        <module>v1ch07</module>
+        <module>v1ch08</module>
+        <module>v1ch09</module>
+        <module>v1ch10</module>
+        <module>v1ch10fx</module>
+        <module>v1ch11</module>
+        <module>v1ch12</module>
+        <module>v1ch13fx</module>
+        <module>v2ch01</module>
+        <module>v2ch02</module>
+        <module>v2ch03</module>
+        <module>v2ch04</module>
+        <module>v2ch05</module>
+        <module>v2ch06</module>
+        <module>v2ch07</module>
+        <module>v2ch08</module>
+        <module>v2ch09</module>
+        <module>v2ch10</module>
+        <module>v2ch11</module>
+        <module>v2ch12</module>
+
+        <module>v3ch09</module>
+
+    </modules>
+
+
+    <dependencies><!--        配置共有依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>2.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <properties><!--        配置共有属性-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+
+    <build>
+        <resources><!--②解决依赖第三方，可执行jar的打包，全量打包-->
+            <!--            配置共有资源-->
+            <resource>
+                <targetPath>${project.build.directory}/classes</targetPath>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.conf</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin><!--                javafx插件-->
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <mainClass>org.ZYJ.Main</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <!--java编译打包插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--java编译打包插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.swordfall.restserver.base.WebServer</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+
+            <!--版本管理-->
+            <plugin>
+                <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/versions-maven-plugin -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+
+        </plugins>
+
+
+        <!--        插件声明功能,在子pom中依然要给出形似下面的声明-->
+        <!--        <plugin>-->
+        <!--            <groupId>org.apache.maven.plugins</groupId>-->
+        <!--            <artifactId>maven-source-plugin</artifactId>-->
+        <!--        </plugin>-->
+        <pluginManagement> <!--            moudle可选插件-->
+            <plugins>
+                <plugin><!--                解决第三方依赖打包-->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <appendAssemblyId>false</appendAssemblyId>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                        <archive>
+                            <manifest>
+                                <mainClass>org.ZYJ.Main</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>assembly</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+            </plugins>
+        </pluginManagement>
+
+
+    </build>
+</project>

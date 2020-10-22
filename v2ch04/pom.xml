@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--    声明父目录信息-->
+    <parent>
+        <groupId>org.ZYJ</groupId>
+        <artifactId>Java-Learning</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!--    定义子模块信息-->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ZYJ</groupId>
+    <artifactId>v2ch04</artifactId>
+    <name>${project.artifactId}</name>
+    <!--    <packaging>jar</packaging>-->
+    <version>${project.version}</version>
+    <description>The all in one project of whatsmars-earth</description>
+
+    
+</project>

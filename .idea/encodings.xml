@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/src/code_in_book/crazyJava/codes/03/3.1/CommentTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/code_in_book/crazyJava/codes/03/3.1/JavadocTagTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/code_in_book/crazyJava/codes/11/11.9/CopySerializable.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/code_in_book/crazyJava/codes/15/15.10/AttributeViewTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/code_in_book/crazyJava/project_codes/光盘说明.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/code_in_book/v1ch04/StaticTest/StaticTest.java" charset="UTF-8" />
-    <file url="PROJECT" charset="UTF-8" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch02/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch02/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch03/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch03/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch04/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch04/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch05/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch05/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch06/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch06/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch07/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch07/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch08/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch08/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch09/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch09/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch10/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch10/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch10fx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch10fx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch11/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch11/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch12/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch12/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch13fx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v1ch13fx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch01/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch01/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch02/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch02/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch03/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch03/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch04/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch04/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch05/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch05/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch06/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch06/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch07/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch07/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch08/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch08/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch09/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch09/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch10/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch10/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch11/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch11/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch12/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v2ch12/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v3ch09/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/v3ch09/src/main/resources" charset="UTF-8" />
   </component>
 </project>

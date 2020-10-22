@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="v4ch2._7_Object类" options="--add-exports jdk.hotspot.agent/sun.jvm.hotspot.asm.sparc=ALL-UNNAMED" />
-    </option>
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="v1ch10" />
+        <module name="v1ch13fx" />
+        <module name="v2ch12" />
+        <module name="v2ch10" />
+        <module name="v2ch11" />
+        <module name="Java-Learning" />
+        <module name="v1ch10fx" />
+        <module name="v1ch08" />
+        <module name="v1ch09" />
+        <module name="v1ch04" />
+        <module name="v1ch05" />
+        <module name="v1ch06" />
+        <module name="v1ch07" />
+        <module name="v1ch02" />
+        <module name="v1ch03" />
+        <module name="v2ch09" />
+        <module name="v2ch07" />
+        <module name="v2ch08" />
+        <module name="v2ch01" />
+        <module name="v2ch02" />
+        <module name="v2ch05" />
+        <module name="v2ch06" />
+        <module name="v2ch03" />
+        <module name="v2ch04" />
+        <module name="v3ch09" />
+        <module name="v1ch11" />
+        <module name="v1ch12" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
