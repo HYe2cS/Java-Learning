@@ -1,10 +1,12 @@
 package transferText;
 
-import java.awt.*;
-import java.awt.datatransfer.*;
-import java.awt.event.*;
-import java.io.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
 
 /**
  * This frame has a text area and buttons for copying and pasting text.
@@ -54,8 +56,10 @@ public class TextTransferFrame extends JFrame {
             try {
                 var text = (String) clipboard.getData(flavor);
                 textArea.replaceSelection(text);
-            } catch (UnsupportedFlavorException e|IOException ex)
+            } catch (UnsupportedFlavorException e)
             {
+                JOptionPane.showMessageDialog(this, e);
+            }catch(IOException ex){
                 JOptionPane.showMessageDialog(this, ex);
             }
         }

@@ -8,12 +8,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ZYJ</groupId>
     <artifactId>Java-Learning</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.2.0-SNAPSHOT</version>
     <!--    项目名称和描述-->
     <name>Java-Learning</name>
     <description>A project help you to learn Java</description>
-    <url>https://hye2cs.github.io/LearningNotes</url>
+    <url>https://YJ2CS.github.io/LearningNotes</url>
 
     <modules><!--        声明module-->
         <module>v1ch02</module>
@@ -29,18 +29,7 @@
         <module>v1ch11</module>
         <module>v1ch12</module>
         <module>v1ch13fx</module>
-        <module>v2ch01</module>
-        <module>v2ch02</module>
-        <module>v2ch03</module>
-        <module>v2ch04</module>
-        <module>v2ch05</module>
-        <module>v2ch06</module>
-        <module>v2ch07</module>
-        <module>v2ch08</module>
-        <module>v2ch09</module>
-        <module>v2ch10</module>
-        <module>v2ch11</module>
-        <module>v2ch12</module>
+
 
         <module>v3ch09</module>
 
@@ -65,8 +54,45 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>11.0.2</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11.0.2</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11.0.2</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>11.0.2</version>
+
+        </dependency>
+
+
+
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
 
     <properties><!--        配置共有属性-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,80 +102,63 @@
 
 
     <build>
-        <resources><!--②解决依赖第三方，可执行jar的打包，全量打包-->
-            <!--            配置共有资源-->
-            <resource>
-                <targetPath>${project.build.directory}/classes</targetPath>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.conf</include>
-                </includes>
-            </resource>
-        </resources>
+
 
         <plugins>
-            <plugin><!--                javafx插件-->
-                <groupId>com.zenjava</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>8.8.3</version>
+            <!--            通过maven命令，统一修改版本号-->
+
+            <!--            mvn versions:set -DnewVersion=1.2.0-SNAPSHOT-->
+            <!--            -->
+            <!--            进行打包和发布-->
+
+            <!--            mvn clean deploy-->
+            <!--            -->
+            <!--            另：还可以进行版本号回滚-->
+
+            <!--            mvn versions:revert-->
+
+            <plugin><!--版本管理插件-->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+<!--                <version>2.8.1</version>-->
                 <configuration>
-                    <mainClass>org.ZYJ.Main</mainClass>
+                    <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
             </plugin>
-            <plugin>
+
+
+            <plugin><!--配置maven打包发布插件,将打包的 maven 项目放入远程存储库中，以与其他开发人员共享。-->
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+
                 </configuration>
             </plugin>
-            <!--java编译打包插件-->
-            <plugin>
+            <plugin><!--配置maven编译插件插件-->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                    <encoding>UTF-8</encoding>
+
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-            <!--java编译打包插件-->
+
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.4</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.swordfall.restserver.base.WebServer</mainClass>
-                        </manifest>
-                    </archive>
+                    <stripDebug>true</stripDebug>
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <noManPages>true</noManPages>
+                    <launcher>launcher</launcher>
+                    <jlinkImageName>output</jlinkImageName>
+                    <jlinkZipName>outputzip</jlinkZipName>
+                    <mainClass>org.openjfx.App</mainClass>
                 </configuration>
             </plugin>
-
-
-            <!--版本管理-->
-            <plugin>
-                <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/versions-maven-plugin -->
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.7</version>
-            </plugin>
-
         </plugins>
 
 
@@ -160,32 +169,6 @@
         <!--        </plugin>-->
         <pluginManagement> <!--            moudle可选插件-->
             <plugins>
-                <plugin><!--                解决第三方依赖打包-->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.3</version>
-                    <configuration>
-                        <appendAssemblyId>false</appendAssemblyId>
-                        <descriptorRefs>
-                            <descriptorRef>jar-with-dependencies</descriptorRef>
-                        </descriptorRefs>
-                        <archive>
-                            <manifest>
-                                <mainClass>org.ZYJ.Main</mainClass>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>make-assembly</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>assembly</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
 
             </plugins>
         </pluginManagement>

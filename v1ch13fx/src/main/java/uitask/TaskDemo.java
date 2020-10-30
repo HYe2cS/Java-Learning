@@ -1,21 +1,25 @@
 package uitask;
 
-import java.awt.*;
-import java.io.*;
-import java.nio.charset.*;
-import java.util.*;
-import java.util.concurrent.*;
-
-import javafx.application.*;
-import javafx.concurrent.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.*;
-import javafx.stage.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TaskDemo extends Application {
     private final TextArea content = new TextArea("");

@@ -1,11 +1,12 @@
 package desktopApp;
 
-import java.awt.*;
-import java.io.*;
-import java.net.*;
-import java.nio.charset.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 class DesktopAppFrame extends JFrame {
     public DesktopAppFrame() {
@@ -22,13 +23,13 @@ class DesktopAppFrame extends JFrame {
         final JTextField toField = new JTextField();
         final JTextField subjectField = new JTextField();
         JButton mailButton = new JButton("Mail");
-        
+
         openButton.setEnabled(false);
         editButton.setEnabled(false);
         printButton.setEnabled(false);
         browseButton.setEnabled(false);
         mailButton.setEnabled(false);
-        
+
         if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();
             if (desktop.isSupported(Desktop.Action.OPEN)) {
@@ -47,14 +48,14 @@ class DesktopAppFrame extends JFrame {
                 mailButton.setEnabled(true);
             }
         }
-        
+
         fileChooserButton.addActionListener(event ->
         {
             if (chooser.showOpenDialog(DesktopAppFrame.this) == JFileChooser.APPROVE_OPTION) {
                 fileField.setText(chooser.getSelectedFile().getAbsolutePath());
             }
         });
-        
+
         openButton.addActionListener(event ->
         {
             try {
@@ -63,7 +64,7 @@ class DesktopAppFrame extends JFrame {
                 ex.printStackTrace();
             }
         });
-        
+
         editButton.addActionListener(event ->
         {
             try {
@@ -72,7 +73,7 @@ class DesktopAppFrame extends JFrame {
                 ex.printStackTrace();
             }
         });
-        
+
         printButton.addActionListener(event ->
         {
             try {
@@ -81,7 +82,7 @@ class DesktopAppFrame extends JFrame {
                 ex.printStackTrace();
             }
         });
-        
+
         browseButton.addActionListener(event ->
         {
             try {
@@ -90,26 +91,26 @@ class DesktopAppFrame extends JFrame {
                 ex.printStackTrace();
             }
         });
-        
+
         mailButton.addActionListener(event ->
         {
             try {
                 String subject = percentEncode(subjectField.getText());
                 URI uri = new URI("mailto:" + toField.getText() + "?subject=" + subject);
-                
+
                 System.out.println(uri);
                 Desktop.getDesktop().mail(uri);
             } catch (URISyntaxException | IOException ex) {
                 ex.printStackTrace();
             }
         });
-        
+
         JPanel buttonPanel = new JPanel();
         ((FlowLayout) buttonPanel.getLayout()).setHgap(2);
         buttonPanel.add(openButton);
         buttonPanel.add(editButton);
         buttonPanel.add(printButton);
-        
+
         add(fileChooserButton, new GBC(0, 0).setAnchor(GBC.EAST).setInsets(2));
         add(fileField, new GBC(1, 0).setFill(GBC.HORIZONTAL));
         add(buttonPanel, new GBC(2, 0).setAnchor(GBC.WEST).setInsets(0));
@@ -120,15 +121,17 @@ class DesktopAppFrame extends JFrame {
         add(mailButton, new GBC(2, 2).setAnchor(GBC.WEST).setInsets(2));
         add(new JLabel("Subject:"), new GBC(0, 3).setAnchor(GBC.EAST).setInsets(5, 2, 5, 2));
         add(subjectField, new GBC(1, 3).setFill(GBC.HORIZONTAL));
-        
+
         pack();
     }
-    
+
     private static String percentEncode(String s) {
-        try {
-            return URLEncoder.encode(s, StandardCharsets.UTF_8).replaceAll("[+]", "%20");
-        } catch (UnsupportedEncodingException ex) {
-            return null; // UTF-8 is always supported
-        }
+//        try {
+//            return URLEncoder.encode(s, StandardCharsets.UTF_8).replaceAll("[+]", "%20");
+//        } catch (UnsupportedEncodingException ex) {
+//            //java: 在相应的 try 语句主体中不能抛出异常错误java.io.UnsupportedEncodingException
+//            return null; // UTF-8 is always supported
+//        }
+        return URLEncoder.encode(s, StandardCharsets.UTF_8).replaceAll("[+]", "%20");
     }
 }

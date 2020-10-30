@@ -1,8 +1,12 @@
 package PackageTest;
 
-import com.horstmann.corejava.*;
-import EmployeeTest.Employee;
+import com.horstmann.corejava.Employee;
 // the Employee class is defined in that package
+
+
+//import EmployeeTest.Employee;
+// this not public
+
 
 import static java.lang.System.*;
 

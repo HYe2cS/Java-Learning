@@ -1,5 +1,7 @@
 
 # 怎样学习Java语言
+- 本页面版本已经老旧(v2020.11.10)，请您参考[我博客中的最新链接](http://47.95.207.150/about/readme_73.html)
+
 帮助新手和有一定编程语言基础的开发者学习Java语言的基础知识和部分进阶内容
 
 我个人在学习Java过程中的学习笔记。除此之外,还有个人在开发过程中踩过的一些坑以及对应的解决方案.
@@ -28,7 +30,7 @@ Python
 
 Java的体系庞大，各类学习视频、学习资料也鱼龙混杂，导致初学者迷茫在信息的海洋中，做了无用功，没能解决问题。
 
-*HYe2cS/LearningNotes* 提供了一个适宜而完备的Java学习框架，试图解决一些新手常见的问题，
+*YJ2CS/LearningNotes* 提供了一个适宜而完备的Java学习框架，试图解决一些新手常见的问题，
 即“如何学Java？”“重点学啥？”“学习过程中会遇到哪些坑？怎么解决？”
 
 *Java学习路线图* 是学习路线的总纲，会介绍"如何系统的自学Java语言?","初学者到底需要学习什么?"
@@ -39,15 +41,15 @@ Java的体系庞大，各类学习视频、学习资料也鱼龙混杂，导致�
 本pages附带的文章集，里面是我开发过程中的一些感悟,踩过的一些坑,以及转载的一些新人环境配置方面常见问题的解决方法,有兴趣可以阅读。
 
 ## 目录
-- [详细内容请见LearningNotes Github Pages](https://hye2cs.github.io/LearningNotes/)
+- [详细内容请见LearningNotes Github Pages](https://YJ2CS.github.io/LearningNotes/)
 
-- [源码请见LearningNotes GitHub repo](https://github.com/HYe2cS/LearningNotes)
+- [源码请见LearningNotes GitHub repo](https://github.com/YJ2CS/LearningNotes)
 
-- [Java 笔记与源码目录](https://hye2cs.github.io/LearningNotes/Java/pre/0_4/)
+- [Java 笔记与源码目录](https://YJ2CS.github.io/LearningNotes/Java/pre/0_4/)
 
-- [Python 笔记与源码阅读目录](https://hye2cs.github.io/LearningNotes/Python/pre/0_3/)
+- [Python 笔记与源码阅读目录](https://YJ2CS.github.io/LearningNotes/Python/pre/0_3/)
 
-- [C++ 笔记与源码阅读目录](https://hye2cs.github.io/LearningNotes/Cpp/pre/0_3/)
+- [C++ 笔记与源码阅读目录](https://YJ2CS.github.io/LearningNotes/Cpp/pre/0_3/)
 
 
 ## 学习书籍
@@ -216,7 +218,7 @@ Java的体系庞大，不是所有内容都能在日常工作中用到，具体�
 
 
 ## 我在干啥
-- [可以点击这查看我的repo进度，不一定更新](https://hye2cs.github.io/LearningNotes/Home/changelog/TODO/)
+- [可以点击这查看我的repo进度，不一定更新](https://YJ2CS.github.io/LearningNotes/Home/changelog/TODO/)
 
 
 ## 环境
@@ -230,3 +232,5 @@ Java的体系庞大，不是所有内容都能在日常工作中用到，具体�
 |v1ch*|corejava_《Java核心技术 卷I》源码
 |v2ch*|corejava_《Java核心技术 卷II》源码
 |Student|练手学生信息管理系统
+
+关于main分支,这个分支是最后一个保留原本文件夹结构的分支,在之后引入了maven作为项目管理系统,合并了许多关于learning-notes的修改

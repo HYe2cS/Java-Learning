@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.ZYJ</groupId>
         <artifactId>Java-Learning</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
 
     <!--    定义子模块信息-->
@@ -15,18 +15,10 @@
     <groupId>com.ZYJ</groupId>
     <artifactId>v1ch02</artifactId>
     <name>${project.artifactId}</name>
-    <!--    <packaging>jar</packaging>-->
-    <version>${project.version}</version>
+    <!--    <packaging>pom</packaging>-->
+    <version>1.2.0-SNAPSHOT</version>
     <description>The all in one project of whatsmars-earth</description>
 
-    <dependencies>
-        <dependency>
-            <!--            声明v1ch02依赖于v3ch09-->
-            <!--            这样打包v1ch02时会将v3ch09一起打包-->
-            <groupId>com.ZYJ</groupId>
-            <artifactId>V3ch09</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
+
 
 </project>
