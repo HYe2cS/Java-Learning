@@ -72,14 +72,14 @@ _site/
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
- .idea/artifacts
- .idea/compiler.xml
- .idea/jarRepositories.xml
- .idea/modules.xml
- .idea/*.iml
- .idea/modules
- *.iml
- *.ipr
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
 
 # CMake
 cmake-build-*/
@@ -135,7 +135,6 @@ tags
 # Persistent undo
 [._]*.un~
 
-### Java template
 
 ## Package Files #
 #*.jar
@@ -160,5 +159,4 @@ tags
 src/code_in_book/v1ch12/uitask/
 src/code_in_book/v2ch05/test/
 
-
-test
+/lib/
